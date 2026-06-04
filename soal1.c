@@ -1,113 +1,38 @@
-/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2025/2026
- *   Modul               : 5 (Foundation of Algorithm)
- *   Hari dan Tanggal    : Selasa, 4 Juni 2026
- *   Nama (NIM)          : Rafif Hilman Muhammad (13224073)
- *   Nama File           : soal1.c
- *   Deskripsi           : input integer banyaknya tanda buka atau tutup,  
-                            dihasilkan kombinasi buka dan tutup
- * 
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 
-// Struktur Node untuk Tree
-typedef struct TreeNode {
-    char data;
-    struct TreeNode *left;
-    struct TreeNode *right;
-} TreeNode;
-
-// Fungsi untuk membuat node baru
-TreeNode* createTreeNode(char value) {
-    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
-    newNode->data = value;
-    newNode->left = NULL;
-    newNode->right = NULL;
-    return newNode;
-}
-
-// Fungsi (Rekursif) untuk memasukkan data ke dalam BST
-TreeNode* insertTree(TreeNode* root, char value) {
-    if (root == NULL) {
-        return createTreeNode(value);
-    }
-    if (value < root->data) {
-        root->left = insertTree(root->left, value);
-    } else if (value > root->data) {
-        root->right = insertTree(root->right, value);
-    }
-    return root;
-}
-
-// Prosedur Traversal: In-Order (Kiri, Akar, Kanan) - Menghasilkan urutan terurut
-void inOrder(TreeNode* root) {
-    if (root != NULL) {
-        inOrder(root->left);
-        printf("%d ", root->data);
-        inOrder(root->right);
-    }
-}
-
-// Prosedur Traversal: Pre-Order (Akar, Kiri, Kanan)
-void preOrder(TreeNode* root) {
-    if (root != NULL) {
-        printf("%d ", root->data);
-        preOrder(root->left);
-        preOrder(root->right);
-    }
-}
-
-// Prosedur Traversal: Post-Order (Kiri, Kanan, Akar)
-void postOrder(TreeNode* root) {
-    if (root != NULL) {
-        postOrder(root->left);
-        postOrder(root->right);
-        printf("%d ", root->data);
-    }
-}
-
-
-int main(void){
+int main (void){
     int n;
-    scanf("%d", &n);
+    scanf("%d", &n); 
 
-    TreeNode* akar = createTreeNode('a');
-
-    
-/*    for (int i; i < n; i++){
-        TreeNode* a = createTreeNode('(');
-        TreeNode* b = createTreeNode(')');
-
-        akar->left = a;
-        akar->right = b;
-
-        TreeNode* p = a;
-        TreeNode* q = b;
-        
-        //Untuk menambahkan
-        for (int j; j < i; j++){
-
-        }
-
-
-
-    }*/
-    
-    int sum = 0; //Jumlah variasi 
-
-    // Untuk mengurutkan dan melakukan output
+    int sum = 1;
     if (n == 0){
         printf("TOTAL 1\n");
     }
     else {
-        for (int i; i < n; i++){
-            
+        char buka[10];
+        for (int i = 0; i < n; i++){
+            buka[i] = '(';
+            printf("%c", buka[i]);
         }
+
+        char tutup[10];
+        for (int i = 0; i < n; i++){
+            tutup[i] = ')';
+            printf("c", tutup[i]);
+        }
+        
+        /*for (int i = 0; i < n; i++){
+            for (int j = n; j >= 0; j--){
+                printf("%c", buka[j]);
+            }
+            for (int j = n; j >= 0; j--){
+                printf("%c", tutup[j]);
+            }
+            sum++;
+        }*/
         printf("TOTAL %d", sum);
     }
-
-    
 
     return 0;
 }
