@@ -11,10 +11,90 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Struktur Node untuk Tree
+typedef struct TreeNode {
+    char data;
+    struct TreeNode *left;
+    struct TreeNode *right;
+} TreeNode;
+
+// Fungsi untuk membuat node baru
+TreeNode* createTreeNode(char value) {
+    TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
+    newNode->data = value;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+// Fungsi untuk memasukkan data ke dalam Tree
+TreeNode* insertTree(TreeNode* root, char value) {
+    if (root == NULL) {
+        return createTreeNode(value);
+    }
+    if (value < root->data) {
+        root->left = insertTree(root->left, value);
+    } else if (value > root->data) {
+        root->right = insertTree(root->right, value);
+    }
+    return root;
+}
+
+// In-Order (Kiri, Akar, Kanan)
+void inOrder(TreeNode* root) {
+    if (root != NULL) {
+        inOrder(root->left);
+        printf("%d ", root->data);
+        inOrder(root->right);
+    }
+}
+
+// Prosedur Traversal: Pre-Order (Akar, Kiri, Kanan)
+void preOrder(TreeNode* root) {
+    if (root != NULL) {
+        printf("%d ", root->data);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
+// Prosedur Traversal: Post-Order (Kiri, Kanan, Akar)
+void postOrder(TreeNode* root) {
+    if (root != NULL) {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d ", root->data);
+    }
+}
+
 int main (void){
     int n;
     scanf("%d", &n); 
 
+/*    
+    // Niat awalnya ingin membuat tree dengan akar buatan di tengah-tengah '(' dan ')'
+    // Kemudian akan diurutkan
+    // Kayaknya harusnya pakai graph
+    // Atau pakai 2 linked list dan headnya nanti ketemu di tengah
+    TreeNode* akar = createTreeNode('a');
+
+    for (int i =  0; i < n; i++){
+        TreeNode* a = createTreeNode('(');
+        TreeNode* b = createTreeNode(')');
+
+        akar->left = a;
+        akar->right = b;
+
+        TreeNode* p = a;
+        TreeNode* q = b;
+        
+        //Untuk menambahkan
+        for (int j = 0; j < i; j++){
+
+        }
+    }*/
+
+    //Database
     int x = 0;
     if (n == 2){
         x = 1;
