@@ -74,23 +74,40 @@ int main(void){
 
     TreeNode* akar = createTreeNode('a');
 
-    for (int i; i < n; i++){
+    
+/*    for (int i; i < n; i++){
         TreeNode* a = createTreeNode('(');
         TreeNode* b = createTreeNode(')');
 
-        a->right = b;
+        akar->left = a;
+        akar->right = b;
+
         TreeNode* p = a;
         TreeNode* q = b;
-    }
+        
+        //Untuk menambahkan
+        for (int j; j < i; j++){
+
+        }
+
+
+
+    }*/
     
-    for (int i; i < n; i++){
+    int sum = 0; //Jumlah variasi 
 
+    // Untuk mengurutkan dan melakukan output
+    if (n == 0){
+        printf("TOTAL 1\n");
+    }
+    else {
+        for (int i; i < n; i++){
+            
+        }
+        printf("TOTAL %d", sum);
     }
 
-
-
-
-
+    
 
     return 0;
 }
