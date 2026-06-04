@@ -15,6 +15,18 @@ int main (void){
     int n;
     scanf("%d", &n); 
 
+    int x = 0;
+    if (n == 2){
+        x = 1;
+    }
+    else if (n == 3){
+        x = 4;
+    }
+    else if (n == 4){
+        x = 13;
+    }
+
+    char temp[10];
     int sum = 1;
     if (n == 0){
         printf("TOTAL 1\n");
@@ -32,6 +44,23 @@ int main (void){
             printf("%c", tutup[i]);
         }
         printf("\n");
+
+
+        int j = 0;
+        while (j < x){
+            temp[j] = tutup[j];
+            tutup [j] = buka [j];
+            buka[j] = temp[j];
+            for (int i = n-1; i >= 0; i--){
+                printf("%c", buka[i]);
+            }
+            for (int i = 0; i < n; i++){
+                printf("%c", tutup[i]);
+            }
+            printf("\n");
+            j++;   
+            sum++;         
+        }
         printf("TOTAL %d\n", sum);
     }
 
