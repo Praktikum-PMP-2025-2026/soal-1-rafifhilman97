@@ -106,19 +106,19 @@ int main (void){
         x = 13;
     }
 
-    char temp[10];
+    char temp[20];
     int sum = 1;
     if (n == 0){
         printf("TOTAL 1\n");
     }
     else {
-        char buka[10];
+        char buka[20];
         for (int i = 0; i < n; i++){
             buka[i] = '(';
             printf("%c", buka[i]);
         }
 
-        char tutup[10];
+        char tutup[20];
         for (int i = 0; i < n; i++){
             tutup[i] = ')';
             printf("%c", tutup[i]);
