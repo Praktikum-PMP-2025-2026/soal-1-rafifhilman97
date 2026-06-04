@@ -1,3 +1,13 @@
+/** EL2008 Praktikum Pemecahan Masalah dengan Pemrograman 2025/2026
+ *   Modul               : 5 (Foundation of Algorithm)
+ *   Hari dan Tanggal    : Selasa, 4 Juni 2026
+ *   Nama (NIM)          : Rafif Hilman Muhammad (13224073)
+ *   Nama File           : soal1.c
+ *   Deskripsi           : input integer banyaknya tanda buka atau tutup,  
+                            dihasilkan kombinasi buka dan tutup
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,19 +29,10 @@ int main (void){
         char tutup[10];
         for (int i = 0; i < n; i++){
             tutup[i] = ')';
-            printf("c", tutup[i]);
+            printf("%c", tutup[i]);
         }
-        
-        /*for (int i = 0; i < n; i++){
-            for (int j = n; j >= 0; j--){
-                printf("%c", buka[j]);
-            }
-            for (int j = n; j >= 0; j--){
-                printf("%c", tutup[j]);
-            }
-            sum++;
-        }*/
-        printf("TOTAL %d", sum);
+        printf("\n");
+        printf("TOTAL %d\n", sum);
     }
 
     return 0;
