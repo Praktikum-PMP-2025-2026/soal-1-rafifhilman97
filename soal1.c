@@ -18,7 +18,7 @@ typedef struct TreeNode {
     struct TreeNode *right;
 } TreeNode;
 
-// Fungsi untuk membuat node baru
+// Fungsi untuk membuat node baru 
 TreeNode* createTreeNode(char value) {
     TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode));
     newNode->data = value;
